@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/features.css"/>
+</h:head>
+<h:body>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north" size="100" resizable="false" closable="false" collapsible="false" id="topPanel">
+            <ui:include src="../layout/menuHorizontal.xhtml"/>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="south" size="100" resizable="false" closable="false" collapsible="false">
+            <h:outputText value="South unit content."/>
+        </p:layoutUnit>
+
+        <p:layoutUnit position="center">
+            <ui:insert name="content">Put default content here, if any.</ui:insert>
+        </p:layoutUnit>
+    </p:layout>
+</h:body>
+</html>

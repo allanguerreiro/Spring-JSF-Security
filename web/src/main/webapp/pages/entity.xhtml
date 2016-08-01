@@ -1,0 +1,51 @@
+<ui:composition template="/WEB-INF/layout/layout.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="content">
+        <h:form>
+            <p:growl id="growl" showDetail="true" sticky="false" life="2000"/>
+            <p:panelGrid columns="2">
+                <h:outputLabel for="id" value="Id : "/>
+                <p:inputText id="id" value="#{entityBBean.id}" disabled="true">
+                    <f:converter converterId="javax.faces.Integer"/>
+                    <p:ajax event="blur" update="growl"/>
+                </p:inputText>
+
+                <h:outputLabel for="attribute" value="Attribute : "/>
+                <p:inputText id="attribute" value="#{entityBBean.attribute}">
+                    <f:validateLength minimum="5"/>
+                    <p:ajax event="blur" update="growl"/>
+                </p:inputText>
+
+                <p:commandButton id="addUser" value="Add" actionListener="#{entityBBean.addEntity}" ajax="false"
+                                 update="growl"/>
+                <p:commandButton id="reset" value="Reset" actionListener="#{entityBBean.reset}" ajax="false"
+                                 update="growl"/>
+            </p:panelGrid>
+            <br/>
+
+            Elements:
+
+            <br/>
+            <p:dataTable id="entities" var="entity" value="#{entityBBean.entityList}"
+                         style="width: 50%">
+                <p:column rendered="true" sortable="true">
+                    <f:facet name="header">
+                        <h:outputText value="ID"/>
+                    </f:facet>
+                    <h:outputText value="#{entity.id}"/>
+                </p:column>
+                <p:column rendered="true">
+                    <f:facet name="header">
+                        <h:outputText value="Name"/>
+                    </f:facet>
+                    <h:outputText value="#{entity.attribute}"/>
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </ui:define>
+</ui:composition>

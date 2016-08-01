@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Login Customizado</title>
+    <link type="text/css" rel="stylesheet" href="#{facesContext.externalContext.requestContextPath}/css/features.css"/>
+</h:head>
+<h:body>
+    <p:growl id="growl" showDetail="true" sticky="false" life="2000"/>
+    <h:form id="login" prependId="false" onsubmit="document.getElementById('login').action='j_spring_security_check';">
+        <div id="principal">
+            <p:layout style="min-width:400px;min-height:250px;" id="layout">
+                <p:layoutUnit position="center" resizable="true" size="200" minSize="250">
+                    <br/>
+                    <div id="msg1" class="msg1">
+                        Seja Bem vindo
+                    </div>
+                    <br/>
+                    <div id="msg2" class="msg2">
+                        Identifique-se por favor para utilizar o sistema.
+                    </div>
+                    <br/>
+                    <div style="align-content: center">
+                        <p:panelGrid columns="2" layout="grid">
+                            <p:outputLabel value="Username:" styleClass="msg2"/>
+                            <p:inputText id="j_username"/>
+
+                            <p:outputLabel value="Password:" styleClass="msg2"/>
+                            <p:password id="j_password"/>
+
+                            <h:commandButton value="Acessar" id="btnAcessar" update="growl" styleClass="button"/>
+                        </p:panelGrid>
+                    </div>
+                </p:layoutUnit>
+            </p:layout>
+            <p:message for="btnAcessar"/>
+        </div>
+    </h:form>
+</h:body>
+</html>

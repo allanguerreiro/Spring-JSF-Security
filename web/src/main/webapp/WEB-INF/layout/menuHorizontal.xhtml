@@ -1,0 +1,57 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Title</title>
+        <link type="text/css" rel="stylesheet"
+              href="#{facesContext.externalContext.requestContextPath}/css/features.css"/>
+    </h:head>
+    <h:form id="form">
+        <p:megaMenu orientation="horizontal" style="margin-top:20px">
+            <p:submenu label="TV" icon="ui-icon-check">
+                <p:column>
+                    <p:submenu>
+                        <p:menuitem value="TV.1.1" url="#"/>
+                    </p:submenu>
+                </p:column>
+
+                <p:column>
+                    <p:submenu>
+                        <p:menuitem value="TV.4.1" url="#"/>
+                    </p:submenu>
+                </p:column>
+            </p:submenu>
+
+            <p:submenu label="Sports" icon="ui-icon-document">
+
+                <p:column>
+                    <p:submenu>
+                        <p:menuitem value="Sports.1.1" url="#"/>
+                    </p:submenu>
+                </p:column>
+            </p:submenu>
+
+            <p:submenu label="Entertainment" icon="ui-icon-pencil">
+                <p:column>
+                    <p:submenu>
+                        <p:menuitem value="Entertainment.1.1" url="#"/>
+                        <p:menuitem value="Entertainment.1.2" url="#"/>
+                    </p:submenu>
+                </p:column>
+            </p:submenu>
+
+            <p:submenu label="Tech" icon="ui-icon-contact">
+                <p:column>
+                    <p:submenu>
+                        <p:menuitem value="Tech.1.1" url="#"/>
+                        <p:menuitem value="Tech.1.2" url="#"/>
+                    </p:submenu>
+                </p:column>
+            </p:submenu>
+
+            <p:menuitem value="Logout" url="/logout" icon="ui-icon-power"/>
+        </p:megaMenu>
+    </h:form>
+</ui:composition>
