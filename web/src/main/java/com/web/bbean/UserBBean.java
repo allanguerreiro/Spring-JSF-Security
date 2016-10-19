@@ -31,7 +31,7 @@ public class UserBBean implements Serializable {
         if (context instanceof SecurityContext) {
             Authentication authentication = context.getAuthentication();
             if (authentication instanceof Authentication) {
-                user.setUsername(((User) authentication.getPrincipal()).getUsername());
+                user.setUsername(String.valueOf(authentication.getPrincipal()));
             }
         }
     }
