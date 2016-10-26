@@ -13,10 +13,10 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/springSecurity.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/root-context.xml</file>
+        <fileset id="fileset" name="Spring Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/springSecurity.xml</file>
         </fileset>
       </configuration>
     </facet>
